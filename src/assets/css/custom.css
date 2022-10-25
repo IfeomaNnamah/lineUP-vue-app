@@ -1,0 +1,16 @@
+.main-content {
+    width: calc(100% - 250px);
+    height: 100vh;
+    background-color: rgb(253, 253, 253);
+    position: relative;
+    float: right;
+    top: 0 !important;
+    bottom: 0 !important;
+}
+
+.sidebar {
+    width: 248px;
+    border-right: 2px solid rgb(245, 245, 245);
+    height: 100vh;
+    position: absolute;
+}
