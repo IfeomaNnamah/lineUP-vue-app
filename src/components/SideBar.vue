@@ -1,28 +1,37 @@
 <template>
   <div class="sidebar">
     <!-- <img class="logo-img" src="@/assets/images/lineup-logo.png" alt=""> -->
-    <h2 class="mt-5"><font-awesome-icon icon="fa-solid fa-circle" class="pr-1 pb-1" style="height: 10px" />lineUP</h2>
+    <h2 style="margin-top: 36px; position: fixed; z-index: 100"><font-awesome-icon icon="fa-solid fa-circle" class="pr-1 pb-1" style="height: 10px" />lineUP</h2>
 
-    <ul class="nav-list">
+    <ul class="nav-list" style="margin-top: 100px; position: absolute; width: 100%">
         <li class="list-item active"><font-awesome-icon icon="fa-solid fa-chart-simple" class="pr-3" /> Dashboard</li>
         <li class="list-item"><font-awesome-icon icon="fa-solid fa-hourglass-start" class="pr-3"/> Upcoming</li>
         <li class="list-item"><font-awesome-icon icon="fa-solid fa-bars" class="pr-3" />All Tasks</li>
 
         <div style="bottom: 0; position: fixed; margin-bottom: 50px;  width: 248px;">
             <li class="list-item mb-4"><font-awesome-icon icon="fa-solid fa-trash" class="pr-3" />Trash</li>
-            <button class="btn custom-btn"><font-awesome-icon icon="fa-solid fa-plus" class="pr-3" />Create a Task</button>
+            <button class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#createTaskModal"><font-awesome-icon icon="fa-solid fa-plus" class="pr-3"/>Create a Task</button>
         </div>
     </ul>
+
+    <CreateTask />
   </div>
 </template>
 
 <script>
-export default {
+import CreateTask from '@/components/CreateTask.vue'
 
+export default {
+ data (){
+    return {
+
+    }
+ },
+ components: { CreateTask, }
 }
 </script>
 
-<style>
+<style scoped>
 h2 {
     font-family: 'Raleway', sans-serif !important;
     font-weight: 600;
@@ -65,5 +74,6 @@ ul .list-item.active, ul .list-item:hover {
     padding: 12px 24px !important;
     width: calc(100% - 45px);
     font-weight: 600;
+    border-radius: 8px !important
 }
 </style>
